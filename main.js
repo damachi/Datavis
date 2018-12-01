@@ -41,6 +41,7 @@ whenDocumentLoaded(() => {
 	width = svg_width;
 	height = svg_height;
 
+
 	const map_promise = d3.json("data/topojson.json").then((topojson_raw) => {
 		const countries_paths = topojson.feature(topojson_raw, topojson_raw.objects.countries1);
 		const meshes = topojson.mesh(topojson_raw, topojson_raw.objects.countries1, function(a, b) { return a !== b; })
