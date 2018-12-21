@@ -1,9 +1,0 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 At first glance we simply display the points we had on a map (using folium) to see the distance between them and also the sparsity on the globe. Our first preprocessing step was to deal with missing data (nan values etc). As the dataset is composed of independent pixels (each pixel got a lat/lon pair corresponding to its location on the globe) our next step  was to determine for each pixel, the country it comes from in order to create DataFrames and useful statistics for every country ( mean calories, mean calories per ha, etc). we can aggregate in the dataset,  After that, we did the same thing for the region level, in order to make a more fine grained study. This will enable us to zoom in multiple levels. Since Stanford provides us with high resolution datasets, we create DataFrames for each region represented in our dataset. So now we are able to represent the countries and for each country, represent the regions.\
-Once again since we are given high resolutions data which consists of millions of points, therefore we will not be able to load all points but rather load portions. What we also noticed is that not all countries are represented int he}
