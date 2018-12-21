@@ -1,0 +1,297 @@
+  
+  .titles{
+    font-family: 'Cardo', serif;
+    font-size: x-large;
+    font-weight: 900;
+    
+
+  }
+  
+    html {
+      scroll-behavior: smooth;
+      overflow: hidden;
+    }
+
+    body {
+        margin-left: 0; 
+        height: 100%; 
+
+
+    }
+
+    #moreInfo{
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      width: 25%;
+      height: 50%;
+      text-align: center;
+      background-color: black;
+      overflow-y: scroll;
+      display: none;
+    }
+
+    .tooltips{
+      position: absolute;
+      text-align: center;
+      padding: 0px;
+      font: 12px sans-serif;
+      background:black;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+
+    }
+    
+    p{
+        z-index: 5;
+      }
+  
+    #slider{
+      position: absolute;
+      top: 90%;
+  
+    }
+    .forwardButton{
+
+    }
+    .backButton{
+      position: absolute;
+      left:0;
+    }
+
+    #normal{
+
+      position: absolute;
+      top: 46%;
+      right:0;
+      background-color: black;
+      color: white;
+      border-radius: 8px;
+      width: 125;
+
+    }
+  
+    #goBack{
+      position: absolute;
+      top: 50%;
+      right:0;
+      background-color: red;
+      color: white;
+      border-radius: 8px;
+      width: 125;
+    }
+
+    .raw{
+      position: absolute;
+      top: 60%;
+      right:0;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      width: 125;
+    }
+    .agg{
+      position: absolute;
+      top: 55%;
+      right:0;
+
+      background-color: blue;
+      color: white;
+      border-radius: 8px;
+      width: 125;
+    }
+    #legend{
+      position: absolute;
+      bottom: 40;
+      right: 1%;
+      width: 15%;
+      /* height: 20%; */
+      border: 1;
+      /* left: 0; */
+      background-color: #b7a6a6d1;
+      opacity: .9;
+    
+    }
+    #loader{
+      display: none;
+      position: fixed;
+      left: 0%;
+      top: 0%;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .close{
+        position: absolute;
+        right:0%;
+        width: 20;
+        height: 20;
+        background-color: white;
+
+    }
+    
+    line#limit {
+      stroke: red;
+      stroke-width: 3;
+      stroke-dasharray: 3 6;
+    }
+  
+    
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    #mapcanvas{
+      
+      position: relative;
+      height:100%;
+      width:100%; 
+    }
+  
+    .canton-label {
+              fill:white;
+              text-anchor: middle;
+              font-size: 10pt;
+      }
+    .canton { 
+      stroke: gray;
+      stroke-width: 0.4px;
+    }
+
+    .leaflet-control-container { 
+        
+        position: absolute; right: 56px 
+    } 
+
+
+
+    div.tooltip {
+  position: absolute;
+  text-align: center;
+
+  width: 100px;
+  height: 100px;
+  padding: 0px;
+  font: 12px sans-serif;
+  background: black;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.hoverSide{
+  color: white;
+}
+.clickBar{
+  color:red;
+}
+
+.cantonhover{
+  color:#00ffb8;
+  margin-top: -13;
+}
+
+
+/* .tooltips {
+  position: absolute;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  padding: 0px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+} */
+
+
+.rawOrDetail{
+
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  padding: 0px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1000000000;
+
+}
+
+.compares{
+  display: none;
+  position: absolute;
+  text-align: left;
+  text-indent: 4px;
+  top: 50%;
+  left: 500;
+  height: 150px;
+  opacity: 1;
+  background-color: black;
+  overflow-y:auto;
+  overflow-x: auto;
+  border-radius: 15px;
+}
+  
+#mapSlide{
+
+}
+
+
+
+#compareSlider{
+
+
+}
+
+.custom-select1{
+  
+}
+
+
+.lds-ring {
+  display: block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  left: 45%;
+  top: 45%
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin: 6px;
+  border: 10px solid white;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: blue transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

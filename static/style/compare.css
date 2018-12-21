@@ -1,0 +1,76 @@
+  /* body{
+    overflow-x: hidden;
+  } */
+  .background {
+    fill:rgba(139, 133, 138, 1);
+    opacity: 0.1;
+    pointer-events: all;
+  }
+  
+  .background1 {
+    fill:rgba(139, 133, 138, 1);
+    opacity: 0.1;
+    pointer-events: all;
+  }
+  
+  
+  .feature {
+    fill: #ccc;
+    cursor: pointer;
+  }
+  
+  .feature.active {
+    fill: orange;
+  }
+  
+  .mesh {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 0.9px
+  }
+  
+  #svg1{
+     position: absolute;
+     right:0;
+  
+  }
+
+  .compareP{
+    color: white;
+  }
+
+  .vCompare{
+    color: blue
+  }
+
+
+  /* span{
+    font-size: 10px;
+  } */
+
+  .circle_tooltip {
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    font: 12px sans-serif;
+    background: black;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+  
+  
+  
+  .custom-select{
+      display: inline;
+  }
+  
+  .custom-select1{
+      position:relative;
+      display: inline;
+      
+    
+  }

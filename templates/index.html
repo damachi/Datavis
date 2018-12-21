@@ -1,0 +1,290 @@
+<html>
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=650, user-scalable=yes">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js" charset="utf-8"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+
+  <link rel=" " href="../static/favicon.ico" >
+  <link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet">
+  <link rel="stylesheet" href="../static/w3.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+
+
+  <script src="../static/lib/colorbrewer.js"></script>
+  <script src="../static/lib/topojson.js"></script>
+  <script src="../static/cartogram.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <link rel="stylesheet" href="../static/style.css"/>
+  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="../static/compare.css">
+  <link rel="stylesheet" href="../static/cartogram.css">
+</head>
+<body>
+
+<div id="mapSlide" style ="width:100%; height: 100%; position: relative;">
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="opacity:0.8; display:none; width: 500px; margin-left:0px; background-color: rgba(30, 210, 203, 0);" id="mySidebar" >
+          <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+          <button id="info" style="position:absolute; right:0; top:200;"> More info</button>
+          <div id="container"  style=" width:500; height:410; background-color: white; border-bottom: dashed;">
+            <p id="title" class="titles"></p>
+          </div>
+
+          <div id="container1" style=" width:500; height:350; background-color:white; border-bottom: dashed;"> 
+            <p id="title1" class="titles"></p>
+          </div>
+          <div id="container2" style=" width:500; height:350; background-color: white;"> 
+            <p id="title2" class="titles"></p>
+          </div>
+    </div>
+
+    <div style="position:relative ; right:0;">
+        <button class="w3-button w3-teal w3-xsmall" onclick="w3_open()">☰</button>
+        <label class="mr-sm-2" style="padding-left: 50;" for="inlineFormCustomSelect">SSP</label>
+        <select class="custom-select mr-sm-2" id="scenario">
+          <option selected>Choose...</option>
+          <option value="1">SSP1</option>
+          <option value="2">SSP2</option>
+          <option value="3">SSP3</option>
+          <option value="4">SSP4</option>
+          <option value="5">SSP5</option>
+        </select>
+
+        <label class="mr-sm-2" style="padding-left: 50;"for="inlineFormCustomSelect">Model</label>
+        <select class="custom-select mr-sm-2" id="model">
+          <option selected>Choose...</option>
+          <option value="1">cc</option>
+          <option value="2">gs</option>
+          <option value="3">he</option>
+          <option value="3">m</option>
+        </select>
+        <!-- <button id="go1" class="btn btn-primary">Go </button> -->
+
+        <label class="mr-sm-2"  style="padding-left: 50;"for="inlineFormCustomSelect">Type of Map</label>
+        <select class="custom-select mr-sm-2" id="typeOfMap">
+          <option selected>Choose...</option>
+          <option value="1">Calorie</option>
+          <option value="3">Precipitation</option>
+          <option value="4">Altitude</option>
+        </select>
+        <!-- <button id="go2" class="btn btn-primary">Go </button> -->
+
+        <label class="mr-sm-2" style="padding-left: 30;" for="inlineFormCustomSelect">Year</label>
+        <select class="custom-select mr-sm-2" id="year">
+          <option selected>Choose...</option>
+          <option value="2">2050</option>
+        </select>
+        <button id="go3" class="btn btn-primary">Go </button> 
+        <button id="cartogramButton"class="btn btn-info">Display Cartogram</button>
+        
+    </div>
+    <div id="slider"></div>
+    <div id="mapcanvas"></div>
+    <div id="legend"></div>
+
+    <div id="compare" class="compares"></div>
+
+    <Button id="goBack" style="opacity: 0"> Go Back</Button>
+    <Button id="raw" class="raw" style="opacity: 0"> Aggregated map</Button>
+    <Button id="Detail" class="agg" style="opacity: 0"> Detailed map</Button>
+    <Button id="normal" style="opacity: 0"> Normal map</Button>
+
+    <div id="moreInfo"></div>
+
+
+   
+
+   
+    <div id="loader" style="display: none">
+       <div id="ring" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+</div>
+
+<div>
+
+
+
+</div>
+
+
+         
+
+
+
+<div id="cartogramSlide" style="width:100%; height: 100%; position: relative; margin-top: 140; background-color:#a52a2a00;">
+  
+ 
+  <fieldset>
+      <button id="backButton" class="btn btn-info" style="position:absolute; left:0"> Back</button>
+      <div class="toggle" style="padding-top: -100">
+        
+          <input type="radio" name="sizeBy" value="weight" id="reset"/>
+          <label for="reset">Reset</label>
+          <input type="radio" name="sizeBy" value="weight" id="calories"/>
+          <label for="calories">Calorie</label>
+          <input type="radio" name="sizeBy" value="dimensions" id="diff_calories" />
+          <label for="diff_calories">Difference Calorie</label>
+          <input type="radio" name="sizeBy" value="dimensions" id="temperature" />
+          <label for="temperature">Temperature</label>
+          <input type="radio" name="sizeBy" value="dimensions" id="workability" />
+          <label for="workability">Workability Index</label>
+          <input type="radio" name="sizeBy" value="dimensions" id="altitude" />
+          <label for="altitude">Altitude</label>	
+      </div>
+
+      <!-- <select class="custom-select mr-sm-2" id="yearCartogram">
+          <option selected>Year</option>
+          <option value="1">2000</option>
+          <option value="2">2050</option>
+        </select> -->
+
+  </fieldset>
+
+
+  <div id="containerCartogram">
+      <svg id="map"></svg>   
+  </div> 
+  <div id="cartogramLegend">
+
+  </div>
+
+</div>
+
+<div id="compareSlider" style="width:100%; height: 100%; position: relative;">
+    <div class="custom-select" style="width:100px;">
+        <select id='selectYear' >
+          <option value="1">2050</option>
+  
+        </select>
+        <select id="selectMap">
+            <option value="1">Calories map</option>
+        </select>
+  
+  
+        <select id="selectModel">
+            <option value="0">Select Model</option>
+            <option value="1">cc</option>
+            <option value="2">gs</option>
+            <option value="3">he</option>
+            <option value="3">m</option>
+        </select>
+  
+        <select id="selectSSP">
+            <option value="0">Select SSP</option>
+            <option value="1">SSP1</option>
+            <option value="2">SSP2</option>
+            <option value="3">SSP3</option>
+            <option value="4">SSP4</option>
+            <option value="5">SSP5</option>
+        </select>
+  
+        <Button id="button1" class="btn btn-primary">
+          Compare
+        </Button>
+    </div>
+
+    <div class="custom-select1" id='nextdiv' style="padding-left: 70px; position: absolute; right: 0;">
+        <select id='selectYear1'>
+          <option value="1">2050</option>
+  
+        </select>
+  
+        <select id="selectMap1">
+            <option value="1">Calories map</option>
+  
+        </select>
+        <select id="selectModel1">
+            <option value="0">Select Model</option>
+            <option value="1">cc</option>
+            <option value="2">gs</option>
+            <option value="3">he</option>
+            <option value="3">m</option>
+  
+        </select>
+  
+        <select id="selectSSP1">
+            <option value="0">Select SSP</option>
+            <option value="1">SSP1</option>
+            <option value="2">SSP2</option>
+            <option value="3">SSP3</option>
+            <option value="4">SSP4</option>
+            <option value="5">SSP5</option>
+        </select>
+  
+        <Button id="button2" class="btn btn-primary">
+          Compare
+        </Button>
+
+    </div>
+
+    <div>
+      <div class="row">
+        <div class="col-sm-3" style="background-color:rgb(113, 193, 219);" id="precipitation"><span>Precipation in milimeters</span></div>
+        <div class="col-sm-3" style="background-color:rgb(171, 131, 49);" id="altitudes">Altitude in meters</div>
+        <div class="col-sm-3" style="background-color:rgb(221, 56, 27);" id="temperatures">Temperature degrees celsuis</div>
+        <div class="col-sm-3" style="background-color:rgb(100, 226, 117);" id="workability_index" >Workability Index</div> 
+      </div>
+      <div class="circle_tooltip" id="circle_tool_tip" style="opacity:0;">
+      </div>
+    </div>
+
+    <Button id="backCompareCarto" style="position:absolute;left:46%; bottom:0" class="btn btn-primary" >BACK TO CARTO</Button>
+    <Button id="backCompareWorld" style="position:absolute;left:46.5%; bottom:35" class="btn btn-danger">BACK TO WORD</Button>
+
+  </div>
+
+
+  <div id="page1" style="width: 100%; height: 100%;text-align: center; margin-top: 150;">
+      <img src="../static/climatechange.jpg" style="width:70%; height: 80%;">
+      <button id="startJourney" style="margin: auto;" class= "btn btn-primary" >Start Journey</button>
+      <button id="skipToMap" style="margin: auto;" class= "btn btn-primary" >SKIP TO MAP</button>
+    
+      <p style="font-size: 30;"> By Pierre Mbanga Ndjock, Nelson Antunes, Francis Damachi</p>
+      
+    </div> 
+    
+    
+    <div id="page2" style="width: 100%; height: 100%;text-align: center;">
+        <div id="pagea" style="width: 80%;height: 80%;margin:auto; margin-top:40%; background-color: black;border-radius: 20px;">
+    
+    
+            <p style="color: white;font-size: 30;font-family: Cardo,SERIF; overflow-y: auto;">
+              What if tomorrow we discover that due to climate change 
+              that the price of production of rice/potatoes will quadruple. 
+              Or even worse we discover that these ingredients will not be able to be produced? 
+              <br>We know that these key ingredients are quite predominant in todays food culture.  
+              Furthermore, we find out that our grocery expenses will increase exponentially. 
+              It is estimated that there will definitely be an increase in the population size in the future. 
+              Logically the increase of the latter should lead to increase of production of food. 
+              But taking into account climate change in the equation of population increase doesn’t necessary 
+              lead to food production increase.
+        
+              <br>With this visualization you will be able to explore different aspects food production with respect to climate change. 
+                In this viz there are three types of maps you will be able to explore 
+              </p>
+          </div>
+          <button id="startMap" style="margin: auto;" class="btn btn-primary"> Go to Map </button>
+          
+    </div> 
+
+  </div>
+</body>
+
+<script src="https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js"></script>
+  <script src="../static/centroids.js"></script>
+  <script src="../static/main.js"></script>
+  <script src="../static/compare.js"></script>
+  <script src="../static/cartogramMain.js"></script>
+
+</html>

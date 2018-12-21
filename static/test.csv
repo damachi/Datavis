@@ -1,0 +1,200 @@
+numcode,country,num_articles1990,num_articles1991
+4,Afghanistan,2,1
+8,Albania,3,18
+12,Algeria,23,217
+20,Andorra,0,0
+24,Angola,2,5
+28,Antigua and Barbuda,0,0
+31,Azerbaijan,9,31
+32,Argentina,780,4642
+36,Australia,2521,17268
+40,Austria,641,4680
+44,Bahamas,1,0
+48,Bahrain,13,84
+50,Bangladesh,30,248
+51,Armenia,5,43
+52,Barbados,5,40
+56,Belgium,989,7136
+60,Bermuda,1,12
+64,Bhutan,1,0
+68,Bolivia,1,36
+70,Bosnia and Herzegovina,1,2
+72,Botswana,7,45
+76,Brazil,812,4481
+84,Belize,0,3
+90,Solomon Islands,1,13
+96,Brunei Darussalam,1,13
+100,Bulgaria,379,1723
+108,Burundi,4,17
+112,Belarus,30,67
+116,Cambodia,0,1
+120,Cameroon,18,144
+124,Canada,5496,38581
+132,Cape Verde,0,2
+140,Central African Republic,0,16
+144,Sri Lanka,19,140
+148,Chad,1,3
+152,Chile,491,1241
+156,China,1299,9801
+158,"Taiwan, Province of China",325,3656
+170,Colombia,33,199
+174,Comoros,2,1
+180,Democratic Republic of the Congo,20,134
+184,Cook Islands,0,1
+188,Costa Rica,63,144
+191,Croatia,6,28
+192,Cuba,87,235
+196,Cyprus,1,27
+203,Czech Republic,1099,4833
+204,Benin,6,28
+208,Denmark,730,5696
+212,Dominica,0,0
+214,Dominican Republic,5,25
+218,Ecuador,8,67
+222,El Salvador,2,3
+226,Equatorial Guinea,0,2
+231,Ethiopia,23,194
+232,Eritrea,0,0
+233,Estonia,7,16
+238,Falkland Islands (Malvinas),0,0
+242,Fiji,4,34
+246,Finland,675,4819
+250,France,5669,38878
+254,French Guiana,1,17
+258,French Polynesia,6,31
+262,Djibouti,2,2
+266,Gabon,7,47
+268,Georgia,7,35
+270,Gambia,23,170
+276,Germany,8303,52698
+288,Ghana,21,96
+292,Gibraltar,0,0
+296,Kiribati,1,0
+300,Greece,275,2683
+304,Greenland,3,4
+308,Grenada,0,0
+320,Guatemala,13,81
+324,Guinea,3,6
+328,Guyana,2,15
+332,Haiti,1,18
+336,Holy See (Vatican City State),1,4
+340,Honduras,6,17
+348,Hungary,865,3173
+352,Iceland,29,195
+356,India,2702,15883
+360,Indonesia,32,213
+364,Iran (Islamic Republic of),55,234
+368,Iraq,24,151
+372,Ireland,495,3454
+376,Israel,1012,7903
+380,Italy,3214,21589
+384,Cote d'Ivoire,17,94
+388,Jamaica,29,173
+392,Japan,5761,52146
+398,Kazakhstan,8,44
+400,Jordan,33,243
+404,Kenya,88,508
+408,"Korea, Democratic People's Republic of",1,2
+410,"Korea, Republic of",384,2269
+414,Kuwait,60,308
+417,Kyrgyzstan,3,6
+418,Lao People's Democratic Republic,0,3
+422,Lebanon,9,94
+426,Lesotho,3,15
+428,Latvia,11,66
+430,Liberia,2,19
+434,Libyan Arab Jamahiriya,11,67
+438,Liechtenstein,9,10
+440,Lithuania,12,17
+442,Luxembourg,8,41
+450,Madagascar,8,40
+454,Malawi,7,59
+458,Malaysia,67,421
+462,Maldives,0,1
+466,Mali,1,28
+470,Malta,0,21
+474,Martinique,3,7
+478,Mauritania,0,2
+480,Mauritius,5,11
+484,Mexico,326,2116
+492,Monaco,7,25
+496,Mongolia,4,58
+498,Republic of Moldova,8,32
+504,Morocco,44,371
+508,Mozambique,2,20
+512,Oman,3,59
+516,Namibia,6,26
+520,Nauru,0,0
+524,Nepal,12,56
+528,Netherlands,1928,15531
+548,Vanuatu,1,6
+554,New Zealand,563,3465
+558,Nicaragua,3,19
+562,Niger,6,40
+566,Nigeria,222,1149
+570,Niue,0,0
+578,Norway,465,3697
+583,"Micronesia, Federated States of",0,0
+585,Palau,0,0
+586,Pakistan,91,507
+591,Panama,17,72
+598,Papua New Guinea,28,109
+600,Paraguay,2,12
+604,Peru,33,172
+608,Philippines,36,269
+616,Poland,1220,6183
+620,Portugal,338,1069
+624,Guinea-Bissau,1,9
+634,Qatar,2,62
+642,Romania,200,722
+643,Russia,13983,40406
+646,Rwanda,0,20
+659,Saint Kitts and Nevis,0,0
+662,Saint Lucia,0,7
+670,Saint Vincent and the Grenadines,0,0
+674,San Marino,0,1
+678,Sao Tome and Principe,0,0
+682,Saudi Arabia,156,1301
+686,Senegal,0,4
+690,Seychelles,0,4
+694,Sierra Leone,5,23
+702,Singapore,114,992
+703,Slovakia,9,61
+704,Viet Nam,25,134
+705,Slovenia,3,20
+706,Somalia,5,18
+710,South Africa,662,4187
+716,Zimbabwe,39,228
+724,Spain,1843,12404
+732,Western Sahara,0,0
+736,Sudan,19,120
+740,Suriname,0,2
+748,Swaziland,2,16
+752,Sweden,1347,11821
+756,Switzerland,1310,10253
+760,Syrian Arab Republic,9,64
+762,Tajikistan,3,6
+764,Thailand,91,553
+768,Togo,4,32
+776,Tonga,0,3
+780,Trinidad and Tobago,15,89
+784,,5,116
+788,Tunisia,37,322
+792,Turkey,155,1395
+795,Turkmenistan,0,5
+798,Tuvalu,0,2
+800,Uganda,12,55
+804,Ukraine,96,402
+807,The former Yugoslav Republic of Macedonia,0,2
+818,Egypt,301,2088
+826,United Kingdom,9527,74037
+834,United Republic of Tanzania,25,162
+840,United States,36584,325421
+854,Burkina Faso,3,46
+858,Uruguay,17,112
+860,Uzbekistan,28,97
+862,Venezuela,103,587
+876,Wallis and Futuna,0,0
+882,Samoa,0,2
+887,Yemen,9,28
+894,Zambia,8,86
